@@ -208,34 +208,7 @@ class ConversationManager:
             self.add_to_history("Human", full_sentence)  # Add human dialog to history
 
             # Check for "goodbye" to exit the loop
-            end_phrases = [
-    "goodbye",
-    "bye",
-    "see you",
-    "take care",
-    "have a nice day",
-    "talk to you later",
-    "i'm done",
-    "that's all",
-    "no further questions",
-    "i have to go",
-    "i need to hang up",
-    "end call",
-    "terminate",
-    "disconnect",
-    "finish",
-    "over and out",
-    "until next time",
-    "farewell",
-    "so long",
-    "adios",
-    "ciao",
-    "auf wiedersehen",
-    "au revoir",
-    "sayonara",
-    "thanks for your help"
-]
-            if any(phrase in self.transcription_response.lower() for phrase in end_phrases):
+            if "goodbye" in self.transcription_response.lower():
                 self.conversation_ended = True  # Set the flag to indicate the conversation has ended
 
         # Add the initial system greeting
